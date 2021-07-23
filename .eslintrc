@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-use-before-define": ["error", { "variables": false }],
+    "no-restricted-globals": 0,
+    "no-unused-expressions": ["error", { "allowTernary": true }],
+    "react/no-danger": 0,
+    "react/no-this-in-sfc": 0,
+    "react/desctructuring-assigment": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "import/prefer-default-export": 0,
+    "comma-dangle": ["error", "never"],
+    "semi": 0,
+    "import/no-unresolved": "off",
+    "prettier/prettier": ["error"],
+    "arrow-parens": "off",
+    "no-underscore-dangle": [
+      "error",
+      { "allow": ["_id"] }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "consistent-return": 0,
+    "react/require-default-props": 0,
+    "no-plusplus": 0,
+    "func-names": 0,
+    "jsx-a11y/iframe-has-title": 0,
+    "no-nested-ternary": 0,
+    "arrow-body-style": 0,
+    "react/jsx-props-no-spreading": 0,
+
+  }
+}
