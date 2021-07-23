@@ -7,19 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:write": "eslint src/ --fix --cache"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run merge-json-file-variables && lint-staged"
-    }
+    "lint:write": "eslint src/ --fix --cache",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.(js|jsx)": [
       "pretty-quick --staged",
       "npm run lint:write",
       "git add ."
-    ]
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.2",
