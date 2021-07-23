@@ -47,7 +47,7 @@ const Home = () => {
       </Button>
 
       <Button onClick={setBlackTheme} className={classes.button}>
-        Set white theme
+        Set black theme
       </Button>
       <Button onClick={setActivityAction} className={classes.button}>
         Set new activity
