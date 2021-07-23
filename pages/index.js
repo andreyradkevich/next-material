@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import Head from 'next/head'
-import { makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, Typography, Box } from '@material-ui/core'
 
 import { useThemeContext, useMountEffect, useRequest } from '@hooks'
 
@@ -32,7 +32,7 @@ const Home = () => {
   })
 
   return (
-    <div className={classes.root}>
+    <Box className={classes.root}>
       <Head>
         <Seo
           title="Home, Sweet Home"
@@ -52,7 +52,7 @@ const Home = () => {
       <Button onClick={setActivityAction} className={classes.button}>
         Set new activity
       </Button>
-    </div>
+    </Box>
   )
 }
 

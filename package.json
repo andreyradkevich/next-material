@@ -6,17 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:write": "eslint src/ --fix --cache"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run merge-json-file-variables && lint-staged"
     }
   },
   "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
+    "*.(js|jsx)": [
+      "pretty-quick --staged",
+      "npm run lint:write",
+      "git add ."
     ]
   },
   "dependencies": {
@@ -43,5 +45,8 @@
     "husky": "^7.0.1",
     "lint-staged": "^11.1.0",
     "prettier": "^2.3.2"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
