@@ -1,4 +1,4 @@
-export default function ({ palette }) {
+export default function Main({ palette }) {
   return {
     root: {
       background: palette.primary.light,

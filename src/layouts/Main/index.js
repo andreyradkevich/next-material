@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import styles from './styles'
 
 import Footer from './Footer'
+import Header from './Header'
 
 const useStyles = makeStyles(styles)
 
@@ -14,6 +15,7 @@ function Main({ className, children }) {
 
   return (
     <Box className={clsx(className, classes.root)}>
+      <Header />
       {children}
       <Footer />
     </Box>

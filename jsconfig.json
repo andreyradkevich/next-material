@@ -10,7 +10,10 @@
       "@hooks": ["src/hooks"],
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/pages/*"],
-      "@globalStyles/*": ["src/styles/*"]
+      "@globalStyles/*": ["src/styles/*"],
+      "react-intl": ["src/react-intl"],
+      "@locales/*": ["src/locales/*"],
+      "@containers/*": ["src/containers/*"]
     }
   }
 }

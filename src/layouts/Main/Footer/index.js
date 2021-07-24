@@ -1,5 +1,6 @@
 import React from 'react'
 import { makeStyles, Box } from '@material-ui/core'
+import { useIntl } from 'react-intl'
 
 import LinkList from '@components/Link/List'
 
@@ -10,14 +11,16 @@ const useStyles = makeStyles(styles)
 function Footer() {
   const classes = useStyles()
 
+  const { messages } = useIntl()
+
   const list = [
     {
       href: '/',
-      text: 'Home'
+      text: messages.home
     },
     {
       href: '/about',
-      text: 'About Us'
+      text: messages.aboutUs
     }
   ]
 

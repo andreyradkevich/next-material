@@ -1,4 +1,4 @@
-export default function ({ palette }) {
+export default function Footer({ palette }) {
   return {
     root: {
       background: palette.primary.dark,

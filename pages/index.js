@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
-import Head from 'next/head'
 import { makeStyles, Typography } from '@material-ui/core'
+import { useIntl } from 'react-intl'
 
 import { useThemeContext, useMountEffect, useRequest } from '@hooks'
 
@@ -20,6 +20,7 @@ function Home() {
 
   const { setWhiteTheme, setBlackTheme } = useThemeContext()
   const { get } = useRequest()
+  const { messages } = useIntl()
 
   const setActivityAction = useCallback(
     () =>
@@ -35,24 +36,22 @@ function Home() {
 
   return (
     <MainLayout className={classes.root}>
-      <Head>
-        <Seo
-          title="Home, Sweet Home"
-          description="Home, Sweet Home Description"
-        />
-      </Head>
+      <Seo
+        title={messages.seoHomePageTitle}
+        description={messages.seoHomePageDescription}
+      />
 
       <Typography variant="h1">{activity}</Typography>
 
       <Button onClick={setWhiteTheme} className={classes.button}>
-        Set white theme
+        {messages.setWhiteTheme}
       </Button>
 
       <Button onClick={setBlackTheme} className={classes.button}>
-        Set black theme
+        {messages.setBlackTheme}
       </Button>
       <Button onClick={setActivityAction} className={classes.button}>
-        Set new activity
+        {messages.setNewActivity}
       </Button>
     </MainLayout>
   )

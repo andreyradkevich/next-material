@@ -1,6 +1,6 @@
 import React from 'react'
-import Head from 'next/head'
 import { makeStyles, Typography } from '@material-ui/core'
+import { useIntl } from 'react-intl'
 
 import Seo from '@components/Seo'
 
@@ -13,16 +13,16 @@ const useStyles = makeStyles(styles)
 function AboutUs() {
   const classes = useStyles()
 
+  const { messages } = useIntl()
+
   return (
     <MainLayout className={classes.root}>
-      <Head>
-        <Seo
-          title="About Us, Sweet About Us"
-          description="About Us, Sweet About Us Description"
-        />
-      </Head>
+      <Seo
+        title={messages.seoAboutUsPageTitle}
+        description={messages.seoAboutUsPageDescription}
+      />
 
-      <Typography variant="h1">About Us</Typography>
+      <Typography variant="h1">{messages.aboutUs}</Typography>
     </MainLayout>
   )
 }
