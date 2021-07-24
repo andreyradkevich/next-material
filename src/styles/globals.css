@@ -41,16 +41,6 @@ a {
   margin: 0;
 }
 
-#ssr {
-  z-index: 2000;
-  position: fixed;
-  background: #000000;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-}
-
 ul {
   list-style: none;
 }
