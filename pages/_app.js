@@ -14,7 +14,11 @@ function App({ Component, pageProps }) {
     }
   }, [])
 
-  return <Application Component={Component} pageProps={pageProps} />
+  return (
+    <Application pageProps={pageProps}>
+      <Component />
+    </Application>
+  )
 }
 
 App.propTypes = {

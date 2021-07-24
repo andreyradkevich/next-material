@@ -18,7 +18,7 @@ const messages = {
   [RU]: ru
 }
 
-function Application({ pageProps, Component }) {
+function Application({ pageProps, children: Component }) {
   const [theme, setTheme] = useState(WHITE)
   const [lang, setLanguage] = useState(EN)
 
@@ -53,7 +53,7 @@ function Application({ pageProps, Component }) {
 }
 
 Application.propTypes = {
-  Component: PropTypes.instanceOf(Object),
+  children: PropTypes.instanceOf(Object),
   pageProps: PropTypes.instanceOf(Object)
 }
 
