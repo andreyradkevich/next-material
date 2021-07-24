@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:write": "eslint pages/ --fix --cache",
+    "lint:write": "eslint src/ --fix --cache",
     "prepare": "husky install"
   },
   "lint-staged": {
