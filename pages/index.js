@@ -9,7 +9,7 @@ import Button from '@components/Button'
 
 import MainLayout from '@layouts/Main'
 
-import styles from './styles'
+import styles from '@styles/home'
 
 const useStyles = makeStyles(styles)
 

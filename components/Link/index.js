@@ -12,7 +12,7 @@ function Link({ href, children }) {
 
 Link.propTypes = {
   href: PropTypes.string.isRequired,
-  children: PropTypes.instanceOf(Object).isRequired
+  children: PropTypes.string.isRequired
 }
 
 export default Link

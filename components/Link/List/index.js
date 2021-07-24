@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Link from '@components/Link'
 
-const List = ({ list }) => {
+function List({ list }) {
   return (
     <ul>
       {list.map((entity) => {

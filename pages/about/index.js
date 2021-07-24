@@ -6,7 +6,7 @@ import Seo from '@components/Seo'
 
 import MainLayout from '@layouts/Main'
 
-import styles from './styles'
+import styles from '@styles/about'
 
 const useStyles = makeStyles(styles)
 
