@@ -18,7 +18,7 @@ const messages = {
   [RU]: ru
 }
 
-function Application({ pageProps, children: Component }) {
+function Application({ children }) {
   const [theme, setTheme] = useState(WHITE)
   const [lang, setLanguage] = useState(EN)
 
@@ -45,7 +45,7 @@ function Application({ pageProps, children: Component }) {
             lang
           }}
         >
-          <Component {...pageProps} />
+          {children}
         </IntlContext.Provider>
       </ThemeContext.Provider>
     </MuiThemeProvider>
@@ -53,8 +53,7 @@ function Application({ pageProps, children: Component }) {
 }
 
 Application.propTypes = {
-  children: PropTypes.instanceOf(Object),
-  pageProps: PropTypes.instanceOf(Object)
+  children: PropTypes.instanceOf(Object)
 }
 
 export default Application

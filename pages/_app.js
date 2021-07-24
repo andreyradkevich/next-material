@@ -15,8 +15,8 @@ function App({ Component, pageProps }) {
   }, [])
 
   return (
-    <Application pageProps={pageProps}>
-      <Component />
+    <Application>
+      <Component pageProps={pageProps} />
     </Application>
   )
 }
