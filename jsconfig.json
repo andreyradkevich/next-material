@@ -3,13 +3,14 @@
     "baseUrl": "./",
     "jsx": "react",
     "paths": {
-      "@components/*": ["components/*"],
-      "@themes": ["themes"],
-      "@constants/*": ["constants/*"],
-      "@contexts/*": ["contexts/*"],
-      "@hooks": ["hooks"],
-      "@layouts/*": ["layouts/*"],
-      "@styles/*": ["styles/pages/*"]
+      "@components/*": ["src/components/*"],
+      "@themes": ["src/themes"],
+      "@constants/*": ["src/constants/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hooks": ["src/hooks"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/pages/*"],
+      "@globalStyles/*": ["src/styles/*"]
     }
   }
 }

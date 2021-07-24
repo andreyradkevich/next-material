@@ -9,7 +9,7 @@ import { blackTheme, whiteTheme } from '@themes'
 
 import { WHITE, BLACK } from '@constants/themes'
 
-import '../styles/globals.css'
+import '@globalStyles/globals.css'
 
 function App({ Component, pageProps }) {
   const [theme, setTheme] = useState(WHITE)
