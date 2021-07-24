@@ -1,10 +1,6 @@
-export default function ({ palette }) {
+export default function () {
   return {
-    root: {
-      background: palette.primary.light,
-      height: '100vh',
-      textAlign: 'center'
-    },
+    root: {},
     button: {
       marginRight: 10,
       background: 'transparent'

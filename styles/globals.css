@@ -29,9 +29,16 @@ a:active {
   color: inherit;
 }
 
-
-h1,h2,h3,h4,h5,h6,span,p,a {
-  margin: 0
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+a {
+  margin: 0;
 }
 
 #ssr {
@@ -42,4 +49,8 @@ h1,h2,h3,h4,h5,h6,span,p,a {
   width: 100vw;
   top: 0;
   left: 0;
+}
+
+ul {
+  list-style: none;
 }

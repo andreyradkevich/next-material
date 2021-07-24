@@ -1,17 +1,19 @@
 import React, { useCallback, useState } from 'react'
 import Head from 'next/head'
-import { makeStyles, Typography, Box } from '@material-ui/core'
+import { makeStyles, Typography } from '@material-ui/core'
 
 import { useThemeContext, useMountEffect, useRequest } from '@hooks'
 
 import Seo from '@components/Seo'
 import Button from '@components/Button'
 
+import MainLayout from '@layouts/Main'
+
 import styles from './styles'
 
 const useStyles = makeStyles(styles)
 
-const Home = () => {
+function Home() {
   const classes = useStyles()
 
   const [activity, setActivity] = useState()
@@ -32,7 +34,7 @@ const Home = () => {
   })
 
   return (
-    <Box className={classes.root}>
+    <MainLayout className={classes.root}>
       <Head>
         <Seo
           title="Home, Sweet Home"
@@ -52,7 +54,7 @@ const Home = () => {
       <Button onClick={setActivityAction} className={classes.button}>
         Set new activity
       </Button>
-    </Box>
+    </MainLayout>
   )
 }
 

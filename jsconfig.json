@@ -1,13 +1,14 @@
 {
-    "compilerOptions": {
-      "baseUrl": "./",
-      "jsx": "react",
-      "paths": {
-        "@components/*": ["pages/components/*"],
-        "@themes": ["pages/themes"],
-        "@constants/*": ["pages/constants/*"],
-        "@contexts/*": ["pages/contexts/*"],
-        "@hooks": ["pages/hooks"],
-      }
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+      "@components/*": ["pages/components/*"],
+      "@themes": ["pages/themes"],
+      "@constants/*": ["pages/constants/*"],
+      "@contexts/*": ["pages/contexts/*"],
+      "@hooks": ["pages/hooks"],
+      "@layouts/*": ["pages/layouts/*"]
     }
   }
+}

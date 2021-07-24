@@ -11,7 +11,7 @@ import { WHITE, BLACK } from '@constants/themes'
 
 import '../styles/globals.css'
 
-const App = ({ Component, pageProps }) => {
+function App({ Component, pageProps }) {
   const [theme, setTheme] = useState(WHITE)
 
   const themesObject = {

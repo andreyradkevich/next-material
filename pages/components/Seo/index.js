@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Seo = ({ title, description, ogTitle, ogDescription }) => {
+function Seo({ title, description, ogTitle, ogDescription }) {
   return (
     <>
       <title>{title}</title>

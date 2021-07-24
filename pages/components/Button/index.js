@@ -7,7 +7,7 @@ import styles from './styles'
 
 const useStyles = makeStyles(styles)
 
-const Button = ({ children, onClick, className }) => {
+function Button({ children, onClick, className }) {
   const classes = useStyles()
 
   return (
