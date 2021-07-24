@@ -4,6 +4,11 @@ import Document, { Html, Head, NextScript, Main } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 
 class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
   render() {
     return (
       <Html>

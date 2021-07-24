@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Application from '@containers/Application'
@@ -6,14 +6,6 @@ import Application from '@containers/Application'
 import '@globalStyles/globals.css'
 
 function App({ Component, pageProps }) {
-  useEffect(() => {
-    const jssStyles = document && document.getElementById('ssr')
-
-    if (jssStyles && jssStyles.parentNode) {
-      jssStyles.parentNode.removeChild(jssStyles)
-    }
-  }, [])
-
   return (
     <Application>
       <Component pageProps={pageProps} />
