@@ -5,10 +5,10 @@ import Application from '@containers/Application'
 
 import '@globalStyles/globals.css'
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps, ...restProps }) {
   return (
-    <Application>
-      <Component pageProps={pageProps} />
+    <Application lang={restProps.router.locale}>
+      <Component pageProps={{ pageProps }} />
     </Application>
   )
 }

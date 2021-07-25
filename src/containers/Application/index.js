@@ -18,30 +18,20 @@ const messages = {
   [RU]: ru
 }
 
-function Application({ children }) {
+function Application({ children, lang }) {
   const [theme, setTheme] = useState(WHITE)
-  const [lang, setLanguage] = useState(EN)
 
   const themesObject = {
     [WHITE]: whiteTheme,
     [BLACK]: blackTheme
   }
 
-  const setWhiteTheme = () => {
-    setTheme(WHITE)
-  }
-
-  const setBlackTheme = () => {
-    setTheme(BLACK)
-  }
-
   return (
     <MuiThemeProvider theme={themesObject[theme]}>
-      <ThemeContext.Provider value={{ setWhiteTheme, setBlackTheme, theme }}>
+      <ThemeContext.Provider value={{ setTheme, theme }}>
         <IntlContext.Provider
           value={{
             messages: messages[lang],
-            setLanguage,
             lang
           }}
         >
@@ -53,7 +43,8 @@ function Application({ children }) {
 }
 
 Application.propTypes = {
-  children: PropTypes.instanceOf(Object)
+  children: PropTypes.instanceOf(Object),
+  lang: PropTypes.string
 }
 
 export default Application
