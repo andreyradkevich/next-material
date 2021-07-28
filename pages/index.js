@@ -1,8 +1,11 @@
 import React, { useCallback, useState } from 'react'
 import { makeStyles, Typography } from '@material-ui/core'
 import { useIntl } from 'react-intl'
+import PropTypes from 'prop-types'
 
-import { useThemeContext, useMountEffect, useRequest } from '@hooks'
+import { getActivity } from '@actions/activity'
+
+import { useThemeContext } from '@hooks'
 
 import Seo from '@components/Seo'
 import Button from '@components/Button'
@@ -13,26 +16,29 @@ import styles from '@styles/home'
 
 const useStyles = makeStyles(styles)
 
-function Home() {
+export async function getStaticProps() {
+  return {
+    props: {
+      ssrActivity: await getActivity()
+    }
+  }
+}
+
+function Home({ ssrActivity = {} }) {
   const classes = useStyles()
 
-  const [activity, setActivity] = useState()
+  const [activity, setActivity] = useState(ssrActivity.activity)
 
   const { setWhiteTheme, setBlackTheme } = useThemeContext()
-  const { get } = useRequest()
   const { messages } = useIntl()
 
   const setActivityAction = useCallback(
     () =>
-      get('activity').then((data) => {
+      getActivity().then((data) => {
         setActivity(data.activity)
       }),
-    [get]
+    []
   )
-
-  useMountEffect(() => {
-    setActivityAction()
-  })
 
   return (
     <MainLayout className={classes.root}>
@@ -55,6 +61,10 @@ function Home() {
       </Button>
     </MainLayout>
   )
+}
+
+Home.propTypes = {
+  ssrActivity: PropTypes.instanceOf(Object)
 }
 
 export default Home

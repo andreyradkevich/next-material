@@ -8,7 +8,7 @@ import '@globalStyles/globals.css'
 function App({ Component, pageProps, ...restProps }) {
   return (
     <Application lang={restProps.router.locale}>
-      <Component pageProps={{ pageProps }} />
+      <Component {...pageProps} />
     </Application>
   )
 }

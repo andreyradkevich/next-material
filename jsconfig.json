@@ -13,7 +13,9 @@
       "@globalStyles/*": ["src/styles/*"],
       "react-intl": ["src/react-intl"],
       "@locales/*": ["src/locales/*"],
-      "@containers/*": ["src/containers/*"]
+      "@containers/*": ["src/containers/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@actions/*": ["src/actions/*"]
     }
   }
 }
