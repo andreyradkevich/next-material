@@ -16,13 +16,13 @@ export const formatMessageWithParams = (message, replacements) => {
 export const useIntl = () => {
   const router = useRouter()
 
-  const { pathname, asPath, query } = router
+  const { pathname } = router
 
   const { messages = {}, lang } = useContext(IntlContext)
 
   const setLanguage = (nextLocale) => {
-    router.push({ pathname, query }, asPath, {
-      locale: nextLocale
+    router.push(`/${nextLocale}${pathname}`, undefined, {
+      locale: false
     })
   }
 
