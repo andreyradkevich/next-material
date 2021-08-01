@@ -8,7 +8,7 @@ import { ThemeContext } from '@contexts/theme'
 import { blackTheme, whiteTheme } from '@themes'
 
 import { WHITE, BLACK } from '@constants/themes'
-import { EN, RU } from '@constants/languages'
+import { EN, RU, DEFAULT_LANGUAGE } from '@constants/languages'
 
 import en from '@locales/en.json'
 import ru from '@locales/ru.json'
@@ -18,8 +18,9 @@ const messages = {
   [RU]: ru
 }
 
-function Application({ children, lang }) {
+function Application({ children }) {
   const [theme, setTheme] = useState(WHITE)
+  const [lang, setLang] = useState(DEFAULT_LANGUAGE)
 
   const themesObject = {
     [WHITE]: whiteTheme,
@@ -32,7 +33,8 @@ function Application({ children, lang }) {
         <IntlContext.Provider
           value={{
             messages: messages[lang],
-            lang
+            lang,
+            setLang
           }}
         >
           {children}
@@ -43,8 +45,7 @@ function Application({ children, lang }) {
 }
 
 Application.propTypes = {
-  children: PropTypes.instanceOf(Object),
-  lang: PropTypes.string
+  children: PropTypes.instanceOf(Object)
 }
 
 export default Application

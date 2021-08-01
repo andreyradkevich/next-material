@@ -5,9 +5,9 @@ import Application from '@containers/Application'
 
 import '@globalStyles/globals.css'
 
-function App({ Component, pageProps, ...restProps }) {
+function App({ Component, pageProps }) {
   return (
-    <Application lang={restProps.router.locale}>
+    <Application>
       <Component {...pageProps} />
     </Application>
   )

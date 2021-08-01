@@ -11,20 +11,11 @@ import {
   Button
 } from '@material-ui/core'
 
-import { EN, RU } from '@constants/languages'
+import { languages as langCodesArray } from '@constants/languages'
 
 import styles from './styles'
 
 const useStyles = makeStyles(styles)
-
-const languages = [
-  {
-    code: EN
-  },
-  {
-    code: RU
-  }
-]
 
 function LangSwitcher({ className, anchorOrigin, transformOrigin }) {
   const classes = useStyles()
@@ -32,6 +23,16 @@ function LangSwitcher({ className, anchorOrigin, transformOrigin }) {
   const [anchorEl, setAnchorEl] = useState(null)
 
   const { setLanguage, lang } = useIntl()
+
+  const languages = useMemo(
+    () =>
+      langCodesArray.map((data) => {
+        return {
+          code: data
+        }
+      }),
+    []
+  )
 
   const handlePopoverOpen = useCallback(
     (event) => {
@@ -59,22 +60,22 @@ function LangSwitcher({ className, anchorOrigin, transformOrigin }) {
           <ListItem
             button
             disableRipple
-            key={localeProp.code}
-            onClick={handleLocaleSwitch(localeProp.code)}
+            key={localeProp?.code}
+            onClick={handleLocaleSwitch(localeProp?.code)}
           >
-            <ListItemText primary={localeProp.code} />
+            <ListItemText primary={localeProp?.code} />
           </ListItem>
         ))}
       </List>
     ),
-    [handleLocaleSwitch]
+    [handleLocaleSwitch, languages]
   )
 
   const currentLocale = useMemo(() => {
     return languages.find((language) => {
-      return language.code === lang
+      return language?.code === lang
     })
-  }, [lang])
+  }, [lang, languages])
 
   return [
     <Button
@@ -82,7 +83,7 @@ function LangSwitcher({ className, anchorOrigin, transformOrigin }) {
       onClick={handlePopoverOpen}
       className={clsx(classes.button, className)}
     >
-      {currentLocale.code}
+      {currentLocale?.code}
     </Button>,
     <Popover
       key="popover"
